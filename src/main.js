@@ -1,4 +1,5 @@
 import './style.css'
+import { initScan, scanView, scanChange, scanClick } from './scan.js'
 
 const tg = window.Telegram?.WebApp
 const user = tg?.initDataUnsafe?.user
@@ -18,7 +19,8 @@ const ic = {
   heart: svg('<path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z"/>'),
   star: svg('<path d="M12 3l2.6 6.4L21 12l-6.4 2.6L12 21l-2.6-6.4L3 12l6.4-2.6z"/>'),
   check: svg('<path d="M5 12l5 5 9-10"/>'),
-  arrow: svg('<path d="M7 17L17 7M8 7h9v9"/>')
+  arrow: svg('<path d="M7 17L17 7M8 7h9v9"/>'),
+  scan: svg('<path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="11" r="3"/><path d="M7 17c.8-2 2.5-3 5-3s4.2 1 5 3"/>')
 }
 
 const hair = [
@@ -56,7 +58,7 @@ const hairCard = h => `
     <div class="more"><div><div class="more-in">
       <div><b>Подходит для лица</b><div class="tags">${h.faces.map(f => `<span class="tag">${f}</span>`).join('')}</div></div>
       <div><b>Сложность укладки</b>${dots(h.care)}</div>
-      <div><b>Совет</b>${h.tip}</div>
+      <div><b>Совет</b>${h.tip}</div>${h.why ? `<div><b>Почему вам подойдёт</b>${h.why}</div>` : ''}
     </div></div></div>
   </article>`
 
@@ -71,8 +73,8 @@ const pages = {
     <section class="hero"><i></i><i></i><i></i><i></i>
       <p class="muted">${user ? `Привет, ${user.first_name}` : 'Добро пожаловать'}</p>
       <h1>Найди свой образ</h1>
-      <p class="lead">Причёски, стили и сленг looksmaxxing в одном месте.</p>
-      <button class="btn" data-page="style">Выбрать стиль ${ic.arrow}</button>
+      <p class="lead">Загрузите фото, и ИИ определит форму лица и подберёт причёску.</p>
+      <button class="btn" data-page="scan">Определить форму лица ${ic.arrow}</button>
     </section>
     <div class="bento">
       <button class="tile tall" data-page="hair">${ic.hair}<div><h3>Причёски</h3><p>Что подойдёт вашему лицу</p></div></button>
@@ -81,6 +83,7 @@ const pages = {
       <button class="tile row pro" data-page="premium">${ic.star}<div><h3>Premium</h3><p>Расширенные гайды</p></div></button>
     </div>
     <p class="quote">Стиль — это способ говорить о себе. <span>Не гонитесь за чужими стандартами.</span></p>`,
+  scan: () => scanView(),
   hair: () => head('Причёски', 'Нажмите на карточку, чтобы увидеть, кому подходит и как укладывать.') + hair.map(hairCard).join(''),
   style: () => head('Стили', 'Выберите направление и начните с базовых вещей.') + styles.map(styleCard).join(''),
   words: () => head('Словарь', 'Термины, которые встречаются в сообществе.') + `
@@ -102,7 +105,7 @@ const pages = {
     <p class="muted" style="text-align:center;margin-top:10px">Оплата пока не подключена</p>`
 }
 
-const tabs = [['home', 'Главная'], ['hair', 'Причёски'], ['style', 'Стили'], ['words', 'Словарь'], ['profile', 'Профиль']]
+const tabs = [['home', 'Главная'], ['scan', 'Скан'], ['hair', 'Причёски'], ['style', 'Стили'], ['profile', 'Профиль']]
 const app = document.querySelector('#app')
 
 function render() {
@@ -124,6 +127,7 @@ function toast(msg) {
 }
 
 app.addEventListener('click', e => {
+  if (scanClick(e)) return
   const fav = e.target.closest('[data-fav]')
   if (fav) {
     e.stopPropagation()
@@ -152,4 +156,6 @@ app.addEventListener('input', e => {
   document.querySelector('#gloss-empty').hidden = n > 0
 })
 
+initScan({ render, card: hairCard, hair, head, ic })
+app.addEventListener('change', scanChange)
 render()
