@@ -24,16 +24,16 @@ const ic = {
 }
 
 const hair = [
-  { id: 'h1', name: 'Текстурный кроп', desc: 'Короткие бока, живая текстура сверху.', faces: ['Овальное', 'Квадратное', 'Круглое'], care: 1, tip: 'Матовая паста на сухие волосы, 2–3 минуты на укладку.' },
-  { id: 'h2', name: 'Центральный пробор', desc: 'Волосы средней длины, мягко разведены в стороны.', faces: ['Овальное', 'Квадратное'], care: 2, tip: 'Сушите феном вниз, а потом зафиксируйте солевым спреем.' },
-  { id: 'h3', name: 'Бокс и полубокс', desc: 'Минимум укладки, максимум опрятности.', faces: ['Овальное', 'Вытянутое'], care: 1, tip: 'Стригитесь раз в 2–3 недели, иначе линия теряет чёткость.' },
-  { id: 'h4', name: 'Небрежная чёлка', desc: 'Рваная чёлка с естественным объёмом.', faces: ['Вытянутое', 'Квадратное'], care: 3, tip: 'Нужна текстурная пудра или глина и регулярная стрижка кончиков.' }
+  { id: 'h1', name: 'Текстурный кроп', desc: 'Короткие бока, живая текстура сверху.', faces: ['Овальное', 'Квадратное', 'Круглое'], care: 1, tip: 'Матовая паста на сухие волосы, 2–3 минуты на укладку.', image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80' },
+  { id: 'h2', name: 'Центральный пробор', desc: 'Волосы средней длины, мягко разведены в стороны.', faces: ['Овальное', 'Квадратное'], care: 2, tip: 'Сушите феном вниз, а потом зафиксируйте солевым спреем.', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80' },
+  { id: 'h3', name: 'Бокс и полубокс', desc: 'Минимум укладки, максимум опрятности.', faces: ['Овальное', 'Вытянутое'], care: 1, tip: 'Стригитесь раз в 2–3 недели, иначе линия теряет чёткость.', image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=80' },
+  { id: 'h4', name: 'Небрежная чёлка', desc: 'Рваная чёлка с естественным объёмом.', faces: ['Вытянутое', 'Квадратное'], care: 3, tip: 'Нужна текстурная пудра или глина и регулярная стрижка кончиков.', image: 'https://images.unsplash.com/photo-1521119989659-a83eee488004?auto=format&fit=crop&w=1200&q=80' }
 ]
 const styles = [
-  { id: 's1', name: 'Минимализм', desc: 'Простые формы, спокойные цвета.', colors: ['#e9e6df', '#8c8f94', '#2b2d31', '#0f0f10'], pieces: 'Белая футболка, прямые брюки, чистые кеды.' },
-  { id: 's2', name: 'Стритвир', desc: 'Свободный крой, кроссовки, уличная культура.', colors: ['#3b4a3a', '#c9a227', '#1d1d1d', '#d9d9d9'], pieces: 'Оверсайз-худи, карго, массивные кроссовки.' },
-  { id: 's3', name: 'Old money', desc: 'Сдержанная классика без громких логотипов.', colors: ['#f2ead8', '#1f3a5f', '#6b4f3a', '#2c2c2c'], pieces: 'Поло, лоферы, пальто, трикотажный кардиган.' },
-  { id: 's4', name: 'Техвир', desc: 'Функциональные ткани и многослойность.', colors: ['#18191b', '#4a4f55', '#7d8a6a', '#b5b9bd'], pieces: 'Мембранная куртка, карго со стропами, трекинговая обувь.' }
+  { id: 's1', name: 'Минимализм', desc: 'Простые формы, спокойные цвета.', colors: ['#e9e6df', '#8c8f94', '#2b2d31', '#0f0f10'], pieces: 'Белая футболка, прямые брюки, чистые кеды.', image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=80' },
+  { id: 's2', name: 'Стритвир', desc: 'Свободный крой, кроссовки, уличная культура.', colors: ['#3b4a3a', '#c9a227', '#1d1d1d', '#d9d9d9'], pieces: 'Оверсайз-худи, карго, массивные кроссовки.', image: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=80' },
+  { id: 's3', name: 'Old money', desc: 'Сдержанная классика без громких логотипов.', colors: ['#f2ead8', '#1f3a5f', '#6b4f3a', '#2c2c2c'], pieces: 'Поло, лоферы, пальто, трикотажный кардиган.', image: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1200&q=80' },
+  { id: 's4', name: 'Техвир', desc: 'Функциональные ткани и многослойность.', colors: ['#18191b', '#4a4f55', '#7d8a6a', '#b5b9bd'], pieces: 'Мембранная куртка, карго со стропами, трекинговая обувь.', image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80' }
 ]
 const glossary = [
   ['Looksmaxxing', 'Работа над внешностью: уход, стиль, форма.'],
@@ -54,7 +54,7 @@ const dots = n => `<div class="dots">${[1, 2, 3].map(i => `<s class="${i <= n ? 
 
 const hairCard = h => `
   <article class="item" data-item>
-    <div class="card-art"><img src="/images/hair-${h.id}.svg" alt="${h.name}" /></div>
+    <div class="card-art"><img src="${h.image}" alt="${h.name}" loading="lazy" /></div>
     <button class="item-head" data-toggle><div><h3>${h.name}</h3><p>${h.desc}</p></div>${favBtn(h.id)}</button>
     <div class="more"><div><div class="more-in">
       <div><b>Подходит для лица</b><div class="tags">${h.faces.map(f => `<span class="tag">${f}</span>`).join('')}</div></div>
@@ -65,7 +65,7 @@ const hairCard = h => `
 
 const styleCard = s => `
   <article class="item" data-item>
-    <div class="card-art"><img src="/images/style-${s.id}.svg" alt="${s.name}" /></div>
+    <div class="card-art"><img src="${s.image}" alt="${s.name}" loading="lazy" /></div>
     <button class="item-head" data-toggle><div><h3>${s.name}</h3><p>${s.desc}</p><div class="sw">${s.colors.map(c => `<s style="background:${c}"></s>`).join('')}</div></div>${favBtn(s.id)}</button>
     <div class="more"><div><div class="more-in"><div><b>Базовые вещи</b>${s.pieces}</div></div></div></div>
   </article>`
