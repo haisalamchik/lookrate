@@ -28,6 +28,8 @@ h1{font:700 30px/1.15 var(--display);letter-spacing:-.02em}h2{font:600 19px/1.25
 .row.pro{background:linear-gradient(100deg,#252b44,var(--surface));border-color:#3a4366}
 .quote{margin:30px 4px 0;font:500 17px/1.5 var(--display);color:var(--muted)}.quote span{color:var(--text)}
 .item{margin-bottom:10px;border-radius:16px;background:var(--surface);border:1px solid var(--line);overflow:hidden}
+.card-art{display:block;width:100%;height:150px;background:linear-gradient(180deg,#1c1f28,#101114)}
+.card-art img{display:block;width:100%;height:100%;object-fit:cover}
 .item-head{display:flex;align-items:center;width:100%;gap:12px;padding:16px;text-align:left}
 .item-head>div{flex:1}.item-head p{color:var(--muted);font-size:13.5px;margin-top:2px}
 .fav{padding:6px;color:var(--muted)}.fav.on{color:var(--accent)}.fav.on svg{fill:currentColor}

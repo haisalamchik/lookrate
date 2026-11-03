@@ -54,6 +54,7 @@ const dots = n => `<div class="dots">${[1, 2, 3].map(i => `<s class="${i <= n ? 
 
 const hairCard = h => `
   <article class="item" data-item>
+    <div class="card-art"><img src="/images/hair-${h.id}.svg" alt="${h.name}" /></div>
     <button class="item-head" data-toggle><div><h3>${h.name}</h3><p>${h.desc}</p></div>${favBtn(h.id)}</button>
     <div class="more"><div><div class="more-in">
       <div><b>Подходит для лица</b><div class="tags">${h.faces.map(f => `<span class="tag">${f}</span>`).join('')}</div></div>
@@ -64,6 +65,7 @@ const hairCard = h => `
 
 const styleCard = s => `
   <article class="item" data-item>
+    <div class="card-art"><img src="/images/style-${s.id}.svg" alt="${s.name}" /></div>
     <button class="item-head" data-toggle><div><h3>${s.name}</h3><p>${s.desc}</p><div class="sw">${s.colors.map(c => `<s style="background:${c}"></s>`).join('')}</div></div>${favBtn(s.id)}</button>
     <div class="more"><div><div class="more-in"><div><b>Базовые вещи</b>${s.pieces}</div></div></div></div>
   </article>`
