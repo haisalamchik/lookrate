@@ -73,7 +73,7 @@ const pages = {
     <section class="hero"><i></i><i></i><i></i><i></i>
       <p class="muted">${user ? `Привет, ${user.first_name}` : 'Добро пожаловать'}</p>
       <h1>Найди свой образ</h1>
-      <p class="lead">Загрузите фото, и ИИ определит форму лица и подберёт причёску.</p>
+      <p class="lead">Загрузите фото, и приложение определит форму лица и подберёт причёску.</p>
       <button class="btn" data-page="scan">Определить форму лица ${ic.arrow}</button>
     </section>
     <div class="bento">
